@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    body{
+      user-select: none;
+      background-color: black;
+    }
+
+    div{
+      color: cyan;
+      font-size: xx-large;
+      font-weight: bolder;
+      
+    }
+
+    .inputField{
+      display: flex;
+      flex-direction: column;
+      background-color: lightgrey;
+      color: black;
+    }
+img{
+  width: 25%;
+  height: 25%;
+}
+
+  </style>
+
+
+</head>
+<body>
+
+  <img src="https://www.wfla.com/wp-content/uploads/sites/71/2023/05/GettyImages-1389862392.jpg?w=2560&h=1440&crop=1" alt="">
+
+<div id="app">
+
+</div>
+<img src="https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcTZCSmCzmIPm0up8wmW566cK5w3sSTUChT5UnaU3VnFxrHwoRNSnks0xUBmj2r2oeJk" alt="">
+
+  <script>
+    let name = '___';
+    let workplace = '___';
+    let food = '___';
+    let hobby = '___';
+    const body = document.body
+
+    updateVeiw()
+
+    function updateVeiw(){
+      document.getElementById('app').innerHTML = /*HTML*/`
+      <h1>Fun</h1>
+
+<div id="nameDiv">
+ My name is: ${name}
+</div>
+
+
+
+<div>
+  I work at: ${workplace}
+</div>
+
+<div>
+  My favorit meal is: ${food}
+</div>
+
+<div>
+  My hobby is: ${hobby}</div>
+
+<input class="inputField" type="text" onchange="setName(this)" placeholder ="Name">
+<input class="inputField" type="text" onchange="setWorkPlace(this)" placeholder ="Work">
+<input class="inputField" type="text" onchange="setFood(this)" placeholder ="Food">
+<input class="inputField" type="text" onchange="setHobby(this)" placeholder ="Hobby">
+
+<button class="funnyButton" onclick="randomShitForFun()">are you bored? press here!!</button>
+</br>
+</br>
+
+
+      `;
+    }
+
+  function setName(input){
+    name = input.value
+    console.log(name)
+    body.style.backgroundColor = 'black'
+    updateVeiw()
+    }
+
+    function setFood(input) {
+      food = input.value
+      console.log(food)
+      body.style.backgroundColor = 'black'
+      updateVeiw()
+    }
+    function setWorkPlace(input) {
+      workplace = input.value
+      console.log(workplace)
+      body.style.backgroundColor = 'black'
+      updateVeiw()
+    }
+    function setHobby(input) {
+      hobby = input.value
+      console.log(hobby)
+      body.style.backgroundColor = 'black'
+      updateVeiw()
+    }
+
+    function randomShitForFun(){
+      let randomNum = Math.floor(Math.random() * 6);
+
+      if(randomNum == 1){
+        name = 'None of your buisness'
+        workplace = 'Hell'
+        food = 'Free, of course'
+        hobby = 'why do you ask? it is privat'
+        body.style.backgroundColor = 'pink'
+      }
+      
+      else if (randomNum == 2) {
+        name = 'Bert'
+        workplace = 'Slaugther'
+        food = 'BBQ'
+        hobby = 'Pig'
+        body.style.backgroundColor = 'red'
+      }
+
+      else if (randomNum == 3) {
+        name = 'Queen'
+        workplace = 'None'
+        food = 'Humans'
+        hobby = 'Hunting'
+        body.style.backgroundColor = 'green'
+      }
+
+      else if (randomNum == 4) {
+        name = 'Cat'
+        workplace = 'Cat'
+        food = 'Cat Food'
+        hobby = 'You guessed it, Cats'
+        body.style.backgroundColor = 'tomato'
+      }
+
+      else if (randomNum == 5) {
+        name = 'Feline'
+        workplace = 'Big cats'
+        food = 'Dog'
+        hobby = 'CATS CATS CATS'
+        body.style.backgroundColor = 'purple'
+      }
+
+      else{
+        name = 'bored'
+        workplace = 'tired'
+        food = 'cranky'
+        hobby = 'some thing else plz'
+        body.style.backgroundColor = 'black'
+      }
+      updateVeiw()
+    }
+  </script>
+</body>
+</html>
