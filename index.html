@@ -24,9 +24,11 @@
       background-color: lightgrey;
       color: black;
     }
-img{
-  width: 25%;
-  height: 25%;
+
+    .shadow {
+  height: 300px;
+  width: 300px;
+  box-shadow: 7px 5px 5px;
 }
 
   </style>
@@ -35,31 +37,34 @@ img{
 </head>
 <body>
 
-  <img src="https://www.wfla.com/wp-content/uploads/sites/71/2023/05/GettyImages-1389862392.jpg?w=2560&h=1440&crop=1" alt="">
+  
 
 <div id="app">
 
 </div>
-<img src="https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcTZCSmCzmIPm0up8wmW566cK5w3sSTUChT5UnaU3VnFxrHwoRNSnks0xUBmj2r2oeJk" alt="">
+
 
   <script>
     let name = '___';
     let workplace = '___';
     let food = '___';
     let hobby = '___';
+    let imgSrc = "cat.jpg";
     const body = document.body
 
     updateVeiw()
 
     function updateVeiw(){
       document.getElementById('app').innerHTML = /*HTML*/`
+      
+
       <h1>Fun</h1>
+
+
 
 <div id="nameDiv">
  My name is: ${name}
 </div>
-
-
 
 <div>
   I work at: ${workplace}
@@ -70,14 +75,18 @@ img{
 </div>
 
 <div>
-  My hobby is: ${hobby}</div>
+  My hobby is: ${hobby}
+  </div>
+
+  
+  <img src="${imgSrc}" class="shadow">
 
 <input class="inputField" type="text" onchange="setName(this)" placeholder ="Name">
 <input class="inputField" type="text" onchange="setWorkPlace(this)" placeholder ="Work">
 <input class="inputField" type="text" onchange="setFood(this)" placeholder ="Food">
 <input class="inputField" type="text" onchange="setHobby(this)" placeholder ="Hobby">
 
-<button class="funnyButton" onclick="randomShitForFun()">are you bored? press here!!</button>
+<button onclick="randomShitForFun(this)">are you bored? press here!!</button>
 </br>
 </br>
 
@@ -111,58 +120,66 @@ img{
       updateVeiw()
     }
 
+    
     function randomShitForFun(){
       let randomNum = Math.floor(Math.random() * 6);
+      
+      // imgSrc = `cat${randomNum}.jpg`
 
       if(randomNum == 1){
+        imgSrc = "cat1.jpg"
         name = 'None of your buisness'
         workplace = 'Hell'
         food = 'Free, of course'
         hobby = 'why do you ask? it is privat'
         body.style.backgroundColor = 'pink'
-      }
-      
+      }  
       else if (randomNum == 2) {
+        imgSrc = "cat2.jpg"
         name = 'Bert'
-        workplace = 'Slaugther'
+        workplace = 'Pestcontrol'
         food = 'BBQ'
-        hobby = 'Pig'
+        hobby = 'Rat Hunting'
         body.style.backgroundColor = 'red'
       }
-
       else if (randomNum == 3) {
+        imgSrc = "cat3.jpg"
         name = 'Queen'
         workplace = 'None'
-        food = 'Humans'
+        food = 'mouse'
         hobby = 'Hunting'
-        body.style.backgroundColor = 'green'
+        body.style.backgroundColor = 'green' 
       }
-
       else if (randomNum == 4) {
+        imgSrc = "cat4.jpg"
         name = 'Cat'
-        workplace = 'Cat'
+        workplace = 'sofa'
         food = 'Cat Food'
-        hobby = 'You guessed it, Cats'
+        hobby = 'You guessed it, Relax'
         body.style.backgroundColor = 'tomato'
       }
-
       else if (randomNum == 5) {
-        name = 'Feline'
-        workplace = 'Big cats'
-        food = 'Dog'
-        hobby = 'CATS CATS CATS'
+        imgSrc = "cat5.jpg"
+        name = 'Sissy'
+        workplace = 'Big cats ink'
+        food = 'Fish'
+        hobby = 'Play around'
         body.style.backgroundColor = 'purple'
       }
-
       else{
+        imgSrc = "cat6.jpg"
         name = 'bored'
         workplace = 'tired'
         food = 'cranky'
         hobby = 'some thing else plz'
         body.style.backgroundColor = 'black'
       }
+
       updateVeiw()
     }
+   
+ 
+   
   </script>
 </body>
 </html>
